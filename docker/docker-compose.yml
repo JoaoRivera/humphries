@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+    humphries:
+        build: ./
+        container_name: humphries
+        restart: always
+        volumes:
+            - ./../src:/app/src
+            - ./../tests:/app/tests
+            - ./../vendor:/app/vendor
+            - ./../phpunit.php:/app/phpunit.php
+            - ./../phpunit.xml:/app/phpunit.xml
+            - ./../composer.json:/app/composer.json
+        ports:
+            - "9000:9000"
